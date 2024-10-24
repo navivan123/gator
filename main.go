@@ -31,13 +31,17 @@ func main() {
     coms := commands{ commandList: map[string]func(*state, command) error {} }
 
     // Register a handler function for each command
-    coms.register("login",    handlerLogin)
-    coms.register("register", handlerRegister)
-    coms.register("reset",    handlerReset)
-    coms.register("users",    handlerUsers)
-    coms.register("agg",      handlerAgg)
-    coms.register("addfeed",  handlerAddFeed)
-    coms.register("feeds",    handlerFeedsWithName)
+    coms.register("login",     handlerLogin)
+    coms.register("register",  handlerRegister)
+    coms.register("reset",     handlerReset)
+    coms.register("users",     handlerUsers)
+    coms.register("agg",       handlerAgg)
+    coms.register("addfeed",   handlerAddFeed)
+    coms.register("feeds",     handlerFeedsWithName)
+    coms.register("follow",    handlerFollow)
+    coms.register("following", handlerFollowing)
+    coms.register("unfollow",  handlerUnfollow)
+    coms.register("browse",    handlerBrowse)
 
     // Open connection to database
     db, err := sql.Open("postgres", cfg.DBUrl)
