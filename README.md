@@ -25,6 +25,7 @@ Use go install github.com/navivan123/gator to install the gator command.
   - Add feed with name and url to database and automatically subscribes the user
 - gator follow <url>
   - Finds feed with url argument to subscribe user to the feed
+  - Two users cannot follow the same feed
 - gator unfollow <url>
   - Finds feed with url argument to unsubscribe user to the feed
 - gator following
