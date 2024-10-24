@@ -12,8 +12,12 @@ RETURNING *;
 SELECT id, created_at, updated_at, name FROM users
 WHERE name = $1;
 
+-- name: GetUserName :one
+SELECT name FROM users
+WHERE id = $1;
+
 -- name: GetUsers :many
 SELECT name FROM users;
 
--- name: Delete :exec
-TRUNCATE users;
+-- name: DeleteUsers :exec
+DELETE FROM users;
